@@ -8,23 +8,30 @@ import React from 'react'
 function Navbar() {
   const navigate = useNavigate()
   const location = useLocation()
+
+  const pathMatchRoute = (route) => {
+    if (route === location.pathname) {
+        return true
+    }
+  }
+
     return (
     <footer className="navbar">
         <nav className="navbarNav">
             <ul className="navbarListItems">
                 <li className="navbarListItem" onClick={() => navigate("/")}>
-                    <ExploreIcon fill="#2c2c2c" width="30px" height="36px" />
-                    <p>Explore</p>
+                    <ExploreIcon  fill={pathMatchRoute("/") ? "#2c2c2c" : "#8f8f8f"} width="30px" height="36px" />
+                    <p className={pathMatchRoute("/") ? "navbarListItemNameActive" : "navbarListItemName"}>Explore</p>
                 </li>
 
                 <li className="navbarListItem" onClick={() => navigate("/offers")}>
-                    <PersonOutlineIcon fill="#2c2c2c" width="30px" height="36px" />
-                    <p>Offer</p>
+                    <PersonOutlineIcon fill={pathMatchRoute("/offers") ? "#2c2c2c" : "#8f8f8f"} width="30px" height="36px" />
+                    <p className={pathMatchRoute("/offers") ? "navbarListItemNameActive" : "navbarListItemName"}>Offer</p>
                 </li>
 
                 <li className="navbarListItem" onClick={() => navigate("/profile")}>
-                    <ExploreIcon fill="#2c2c2c" width="30px" height="36px" />
-                    <p>Profile</p>
+                    <ExploreIcon  fill={pathMatchRoute("/profile") ? "#2c2c2c" : "#8f8f8f"} width="30px" height="36px" />
+                    <p className={pathMatchRoute("/profile") ? "navbarListItemNameActive" : "navbarListItemName"}>Profile</p>
                 </li>
             </ul>
 
