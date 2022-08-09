@@ -1,6 +1,7 @@
 import {useState} from "react"
 import {setDoc, doc, serverTimestamp} from "firebase/firestore" 
 import {toast} from "react-toastify"
+import OAuth from "../components/OAuth"
 
 import {Link, useNavigate} from "react-router-dom"
 import {ReactComponent as ArrowRightIcon} from "../assets/svg/keyboardArrowRightIcon.svg"
@@ -121,8 +122,7 @@ const onSubmit = async (e) => {
 
         </form>
 
-        {/* google oauth component */}
-
+        <OAuth />
       <Link to="/sign-in" className="registerLink">
         Sign in 
       </Link>

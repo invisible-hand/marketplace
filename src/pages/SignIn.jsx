@@ -5,6 +5,7 @@ import {getAuth, signInWithEmailAndPassword} from "firebase/auth"
 import {ReactComponent as ArrowRightIcon} from "../assets/svg/keyboardArrowRightIcon.svg"
 import visibilityIcon from "../assets/svg/visibilityIcon.svg"
 import React from 'react'
+import OAuth from "../components/OAuth"
 
 
 function SignIn() {
@@ -93,7 +94,7 @@ const onSubmit = async (e) => {
 
         </form>
 
-        {/* google oauth component */}
+        <OAuth />
 
       <Link to="/sign-up" className="registerLink">
         Sign up 
